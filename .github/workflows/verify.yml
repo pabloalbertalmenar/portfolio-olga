@@ -18,7 +18,7 @@ jobs:
       - name: Configure Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
@@ -34,3 +34,6 @@ jobs:
           test -f dist/gallery-data.js
           test -f dist/cv-olga-alvarez.pdf
           test "$(find dist/media -mindepth 1 -maxdepth 1 -type d | wc -l)" -eq 6
+          test "$(find dist/media -mindepth 2 -maxdepth 2 -type d | wc -l)" -eq 12
+          test "$(find dist/media -type f | wc -l)" -eq 36
+          ! grep -Eiq "whatsapp|img[-_ ]*[0-9]|dsc[-_ ]*[0-9]" dist/gallery-data.js
