@@ -163,3 +163,7 @@ console.log(
     categories.reduce((sum, category) => sum + category.items.length, 0) +
     " archivos."
 );
+console.log(
+  "Categorías detectadas: " +
+    categories.map((category) => category.title + " (" + category.items.length + ")").join(", ")
+);
