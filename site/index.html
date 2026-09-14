@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio de Olga Álvarez: fotografía, vídeo, eventos y creación de contenido." />
+    <meta name="theme-color" content="#f6f7fb" />
+    <title>Olga Álvarez — Fotografía y contenido</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23111116'/%3E%3Ccircle cx='47' cy='17' r='8' fill='%23ff6b35'/%3E%3Ctext x='10' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white'%3EOA%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="gallery-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <div class="page-glow page-glow--one" aria-hidden="true"></div>
+    <div class="page-glow page-glow--two" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="wordmark" href="#inicio" aria-label="Ir al inicio">
+        <span class="wordmark__mark">OA</span>
+        <span>olga.alvarez</span>
+      </a>
+      <nav class="topbar__nav" aria-label="Navegación principal">
+        <a href="#galeria">Trabajos</a>
+        <a href="#perfil">Perfil</a>
+        <a class="topbar__contact" href="mailto:oalvarezpaya@gmail.com">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="profile shell" aria-labelledby="profile-title">
+        <div class="profile__avatar" aria-hidden="true">
+          <span>OA</span>
+          <img id="profileAvatar" alt="" hidden />
+        </div>
+
+        <div class="profile__content">
+          <div class="profile__heading">
+            <div>
+              <p class="eyebrow">@ol.olgaa</p>
+              <h1 id="profile-title">Olga Álvarez</h1>
+            </div>
+            <span class="availability">
+              <span class="availability__dot" aria-hidden="true"></span>
+              Disponible para trabajar
+            </span>
+          </div>
+
+          <p class="profile__role">Fotógrafa · Videógrafa · Creadora de contenido</p>
+          <p class="profile__bio">
+            Capturo eventos, personas y proyectos desde dentro: el movimiento,
+            los detalles y la energía que hacen que cada historia sea distinta.
+          </p>
+
+          <div class="profile__actions" aria-label="Enlaces profesionales">
+            <a class="button button--primary" href="mailto:oalvarezpaya@gmail.com">
+              Escríbeme
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 6l6 6-6 6" /></svg>
+            </a>
+            <a class="button button--secondary" href="https://www.instagram.com/ol.olgaa/" target="_blank" rel="noreferrer">Instagram</a>
+            <a class="button button--ghost js-cv-link" href="cv-olga-alvarez.pdf" target="_blank" rel="noreferrer">Ver CV</a>
+          </div>
+
+          <dl class="profile__stats">
+            <div><dt id="categoryCount">6</dt><dd>Categorías</dd></div>
+            <div><dt id="workCount">—</dt><dd>Trabajos</dd></div>
+            <div><dt>100%</dt><dd>Mirada propia</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="stories shell" aria-labelledby="stories-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Seis formas de mirar</p>
+            <h2 id="stories-title">Explora por categorías</h2>
+          </div>
+          <p>Selecciona una historia para filtrar el feed.</p>
+        </div>
+        <div class="stories__rail" id="storyList" role="tablist" aria-label="Categorías"></div>
+      </section>
+
+      <div class="content-layout shell" id="galeria">
+        <section class="feed" aria-labelledby="feed-title">
+          <div class="feed__toolbar">
+            <div><p class="eyebrow">Portfolio</p><h2 id="feed-title">El feed de Olga</h2></div>
+            <div class="filters" id="filterList" aria-label="Filtrar trabajos"></div>
+          </div>
+          <div class="feed__status" aria-live="polite">
+            <span id="resultLabel">Cargando trabajos…</span>
+            <button class="text-button" id="clearFilter" type="button" hidden>Ver todo</button>
+          </div>
+          <div class="feed__grid" id="feedGrid"></div>
+          <noscript><p class="empty-state">Activa JavaScript para explorar las galerías interactivas.</p></noscript>
+        </section>
+
+        <aside class="sidebar" id="perfil" aria-label="Perfil profesional">
+          <section class="profile-card">
+            <div class="profile-card__top">
+              <span class="mini-avatar">OA</span>
+              <div><strong>Olga Álvarez Payá</strong><span>Fotografía y contenido</span></div>
+            </div>
+            <p>
+              Experiencia en fotografía y vídeo de eventos, organización,
+              atención al público y soporte técnico durante producciones.
+            </p>
+            <ul class="skill-list" aria-label="Áreas de experiencia">
+              <li>Fotografía y edición</li>
+              <li>Vídeo de eventos</li>
+              <li>Marketing digital</li>
+              <li>Redes sociales</li>
+            </ul>
+          </section>
+
+          <section class="experience-card">
+            <p class="eyebrow">Experiencia</p>
+            <h2>También detrás de la cámara</h2>
+            <div class="experience-list">
+              <article>
+                <span>01</span>
+                <div><h3>Fotógrafa y videógrafa</h3><p>Captura, selección y edición de piezas para eventos y clientes.</p></div>
+              </article>
+              <article>
+                <span>02</span>
+                <div><h3>Técnica de eventos</h3><p>Preparación de dispositivos y asistencia durante los eventos.</p></div>
+              </article>
+              <article>
+                <span>03</span>
+                <div><h3>Gestión y comunicación</h3><p>Coordinación, atención a asistentes y resolución de incidencias.</p></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="contact-card">
+            <span class="contact-card__spark" aria-hidden="true">✦</span>
+            <p class="eyebrow">Disponible</p>
+            <h2>¿Creamos algo?</h2>
+            <p>Abierta a nuevos proyectos, colaboraciones y oportunidades de trabajo.</p>
+            <a href="mailto:oalvarezpaya@gmail.com">oalvarezpaya@gmail.com</a>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer shell">
+      <span>© <span id="currentYear"></span> Olga Álvarez</span>
+      <span>Fotografía · Vídeo · Contenido</span>
+    </footer>
+
+    <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+      <div class="lightbox__panel">
+        <button class="icon-button lightbox__close" id="closeLightbox" type="button" aria-label="Cerrar visor">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        </button>
+        <button class="icon-button lightbox__arrow lightbox__arrow--prev" id="previousWork" type="button" aria-label="Trabajo anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+        </button>
+        <figure class="lightbox__figure">
+          <div class="lightbox__media" id="lightboxMedia"></div>
+          <figcaption>
+            <span id="lightboxCategory"></span>
+            <strong id="lightboxTitle"></strong>
+            <small id="lightboxPosition"></small>
+          </figcaption>
+        </figure>
+        <button class="icon-button lightbox__arrow lightbox__arrow--next" id="nextWork" type="button" aria-label="Trabajo siguiente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
+    </dialog>
+  </body>
+</html>
