@@ -85,32 +85,74 @@ function labelFromFilename(filename) {
   return pretty(path.parse(filename).name.replace(/^(img|dsc|foto|photo)[-_ ]*\d*/i, ""));
 }
 
+const portfolioGroups = [
+  {
+    id: "gastronomia",
+    title: "Gastronomía",
+    order: 1,
+    folders: ["cafeteria", "restaurante"],
+  },
+  {
+    id: "musica",
+    title: "Música",
+    order: 2,
+    folders: ["cantantes", "dj1", "dj2"],
+  },
+  {
+    id: "bienestar",
+    title: "Pilates & bienestar",
+    order: 3,
+    folders: ["estudio-pilates", "evento-pilates"],
+  },
+  {
+    id: "marca-negocio",
+    title: "Marca & negocio",
+    order: 4,
+    folders: ["marca", "negocio"],
+  },
+  {
+    id: "moda-pasarela",
+    title: "Moda & pasarela",
+    order: 5,
+    folders: ["moda", "pasarela"],
+  },
+  {
+    id: "danza",
+    title: "Danza",
+    order: 6,
+    folders: ["sesion-de-baile"],
+  },
+];
+
+function groupForFolder(folder) {
+  const folderId = slug(folder);
+  return (
+    portfolioGroups.find((group) => group.folders.includes(folderId)) || {
+      id: folderId || "seleccion",
+      title: pretty(folder),
+      order: 999,
+      folders: [folderId],
+    }
+  );
+}
+
 const categoryMap = new Map();
-const usedCategoryIds = new Set();
 
 for (const item of media) {
   const filename = item.parts.at(-1);
   const rawCategory = item.parts.length > 1 ? item.parts[0] : "Selección";
-  let category = categoryMap.get(rawCategory);
+  const group = groupForFolder(rawCategory);
+  let category = categoryMap.get(group.id);
 
   if (!category) {
-    const baseId = slug(rawCategory) || "seleccion";
-    let id = baseId;
-    let suffix = 2;
-    while (usedCategoryIds.has(id)) {
-      id = baseId + "-" + suffix++;
-    }
-    usedCategoryIds.add(id);
-
-    const numericOrder = Number.parseInt((rawCategory.match(/^\s*(\d+)/) || [])[1], 10);
     category = {
-      id,
-      title: pretty(rawCategory),
-      order: Number.isFinite(numericOrder) ? numericOrder : 999,
+      id: group.id,
+      title: group.title,
+      order: group.order,
       items: [],
     };
-    categoryMap.set(rawCategory, category);
-    fs.mkdirSync(path.join(mediaOutput, id), { recursive: true });
+    categoryMap.set(group.id, category);
+    fs.mkdirSync(path.join(mediaOutput, group.id), { recursive: true });
   }
 
   const extension = item.extension === ".jpeg" ? ".jpg" : item.extension;
