@@ -1,15 +1,19 @@
 # Portfolio de Olga Álvarez
 
-Portfolio fotográfico con estética de red social, seis categorías dinámicas, galerías interactivas, visor a pantalla completa, contacto profesional y descarga del CV.
+Portfolio fotográfico con estética de red social, seis categorías, galerías interactivas, visor a pantalla completa, contacto profesional y descarga del CV.
 
-## Archivos que faltan subir
+## Contenido
 
-Añade en la raíz del repositorio, sin cambiar sus nombres:
+El proceso de publicación prepara automáticamente las 36 fotografías de `PORTFOLIO OLGA.zip` y las distribuye en:
 
-- `PORTFOLIO OLGA.zip`
-- `CV OLGA ÁLVAREZ 2026.pdf`
+1. Gastronomía
+2. Música
+3. Pilates & bienestar
+4. Marca & negocio
+5. Moda & pasarela
+6. Danza
 
-No hace falta descomprimir el ZIP. Durante la publicación, la web organiza automáticamente las carpetas del archivo como categorías y prepara las fotografías y vídeos.
+También incorpora el CV de Olga en PDF.
 
 ## Publicar en Vercel
 
@@ -17,7 +21,9 @@ No hace falta descomprimir el ZIP. Durante la publicación, la web organiza auto
 2. Vercel leerá automáticamente `vercel.json`.
 3. Pulsa **Deploy**.
 
-La configuración utiliza:
+Configuración incluida:
 
 - Build command: `npm run build`
 - Output directory: `dist`
+
+Cada cambio enviado a `main` se comprueba automáticamente con GitHub Actions.
