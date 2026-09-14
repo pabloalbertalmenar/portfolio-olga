@@ -78,7 +78,7 @@ const projectDefinitions = [
     folder: "dj1",
     id: "pulso-nocturno",
     categoryId: "eventos",
-    title: "Pulso nocturno",
+    title: "Tardeo en la playa",
     description: "Crónica visual de una sesión DJ: cabina, luces y energía compartida.",
     tags: ["Evento", "Directo", "Social"],
   },
