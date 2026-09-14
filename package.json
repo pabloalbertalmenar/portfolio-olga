@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-olga",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  }
+}
